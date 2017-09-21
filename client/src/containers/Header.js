@@ -2,14 +2,50 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 import { logout } from '../actions'
 
+const HeaderSection = styled.div`
+  background-color: #181818;
+  padding: 15px;
+  height: 75px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+`
+const LogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+  color: #e1c348;
+`
+
+const AuthActionList = styled.ul`
+  list-style-type: none;
+  margin: 0px;
+`
+
 class Header extends Component {
+  /*
+  auth propTypes: there are three possibilites [
+      null -> when app doesn't get any response back from server
+      false -> when app gets falsy response back from server
+      object(user info) -> when user gets authenticated successfully
+    ]
+
+  history propTypes: has to be an object with PropTypes.historyShape but I
+  couldn't find the correct api for that. I need to fix that later
+
+  */
   static propTypes = {
-    auth: PropTypes.bool.isRequired,
     logout: PropTypes.func.isRequired,
-    history: PropTypes.func.isRequired,
+    auth: PropTypes.oneOfType([PropTypes.bool, PropTypes.shape()]),
+    history: PropTypes.shape().isRequired,
+  }
+
+  static defaultProps = {
+    auth: null,
   }
 
   renderContent() {
@@ -19,13 +55,20 @@ class Header extends Component {
       case false:
         return (
           <li>
-            <a href="/auth/google">Login with Google</a>
+            <a className="btn" href="/auth/google">
+              Login with Google
+            </a>
           </li>
         )
       default:
         return (
-          <li style={{ textDecoration: 'blue' }}>
+          <li>
+            <span style={{ marginRight: '15px' }}>
+              Welcome {this.props.auth.givenName}!
+            </span>
             <a
+              className="btn"
+              style={{ cursor: 'pointer' }}
               role="menuitem"
               tabIndex="0"
               onClick={event => {
@@ -33,7 +76,7 @@ class Header extends Component {
                 this.props.logout(this.props.history)
               }}
             >
-              logout
+              Logout
             </a>
           </li>
         )
@@ -42,16 +85,16 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
-          <Link to={this.props.auth ? '/' : '/'}>ZeTiXaR</Link>
-          <ul>{this.renderContent()}</ul>
-        </div>
+        <HeaderSection className="nav-wrapper">
+          <LogoLink to={this.props.auth ? '/' : '/'}>ZeTiXaR</LogoLink>
+          <AuthActionList>{this.renderContent()}</AuthActionList>
+        </HeaderSection>
       </nav>
     )
   }
 }
 
-function mapStateToProps(auth) {
+function mapStateToProps({ auth }) {
   return {
     auth,
   }

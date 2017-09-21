@@ -13,4 +13,13 @@ injectGlobal`
     padding: 0;
     font-family: sans-serif;
   }
+  a {
+    color: #3333df;
+    text-decoration: none;
+  }
+  .btn {
+    padding: 10px 25px;
+    background-color: #9ad7e3;
+    border-radius: 5px;
+  }
 `

@@ -15,6 +15,9 @@ The goal for this project is to serve as a boilerplate that puts together the fo
 
 
 ## How to use?
+### What you need to have before?
+node.js and mongodb
+
 After cloning the repository on your local machine, to install the client and the server side dependencies run:
 ```
 npm install && npm install --prefix client

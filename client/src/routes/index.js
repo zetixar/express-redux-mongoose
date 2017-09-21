@@ -3,7 +3,7 @@ import { CounterContainer, Header } from 'containers'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import styled from 'styled-components'
 
-const Container = styled.div`padding: 15px;`
+const Container = styled.div`width: 100%;`
 
 function Routes() {
   return (
