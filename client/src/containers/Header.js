@@ -26,7 +26,7 @@ const AuthActionList = styled.ul`
   margin: 0px;
 `
 
-class Header extends Component {
+export class Header extends Component {
   /*
   auth propTypes: there are three possibilites [
       null -> when app doesn't get any response back from server

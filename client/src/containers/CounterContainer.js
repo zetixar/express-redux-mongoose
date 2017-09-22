@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as CounterActions from 'actions/counter'
 
-class CounterContainer extends React.Component {
+export class CounterContainer extends React.Component {
   static propTypes = {
     increment: PropTypes.func.isRequired,
     decrement: PropTypes.func.isRequired,
