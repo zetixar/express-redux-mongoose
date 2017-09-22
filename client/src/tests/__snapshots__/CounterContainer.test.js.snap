@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders consistantly[snapshot] without crashing 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <pure(Counter)
+    counter={0}
+    decrement={[Function]}
+    increment={[Function]}
+    incrementIfOdd={[Function]}
+  />,
+  "nodes": Array [
+    <pure(Counter)
+      counter={0}
+      decrement={[Function]}
+      increment={[Function]}
+      incrementIfOdd={[Function]}
+    />,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <CounterContainer
+        counter={0}
+        decrement={[Function]}
+        increment={[Function]}
+        incrementIfOdd={[Function]}
+      />,
+      "_debugID": 19,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": CounterContainer {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "decrement": [Function],
+        "increment": [Function],
+        "incrementIfOdd": [Function],
+        "props": Object {
+          "counter": 0,
+          "decrement": [Function],
+          "increment": [Function],
+          "incrementIfOdd": [Function],
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <pure(Counter)
+          counter={0}
+          decrement={[Function]}
+          increment={[Function]}
+          incrementIfOdd={[Function]}
+        />,
+        "_debugID": 20,
+        "_renderedOutput": <pure(Counter)
+          counter={0}
+          decrement={[Function]}
+          increment={[Function]}
+          incrementIfOdd={[Function]}
+        />,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <CounterContainer
+    counter={0}
+    decrement={[Function]}
+    increment={[Function]}
+    incrementIfOdd={[Function]}
+  />,
+}
+`;
